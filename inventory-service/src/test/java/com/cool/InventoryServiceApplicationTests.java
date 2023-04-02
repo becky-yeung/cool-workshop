@@ -1,10 +1,10 @@
-package com.cool.notificationservice;
+package com.cool;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotificationServiceApplicationTests {
+class InventoryServiceApplicationTests {
 
     @Test
     void contextLoads() {

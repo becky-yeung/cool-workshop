@@ -5,12 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class OrderRequest {
-    List<OrderRequestItem> orderRequestItems;
+public class InventoryResponse {
+    private String skuCode;
+    private Integer quantity;
+
+    public boolean isInStock() {
+        return quantity > 0;
+    }
 }
