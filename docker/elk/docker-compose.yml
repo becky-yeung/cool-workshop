@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  elasticsearch:
+    image: elasticsearch:8.7.0 #id/password = elastic/password
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.7.0
+    ports:
+      - "5000:5000"
+    depends_on:
+      - elasticsearch
+  kibana:
+    image: kibana:8.7.0
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
